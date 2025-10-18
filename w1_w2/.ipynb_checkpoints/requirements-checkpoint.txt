@@ -1,0 +1,4 @@
+tqdm>=4.41.0,<5
+pandas
+scikit-learn
+joblib==1.5.2
