@@ -39,6 +39,4 @@ jobs:
           echo "------" >> report.md
           cat test_output.txt >> report.md
           echo "------" >> report.md
-          echo "Predictions on v2 from training on v1" >> report.md
-          cat w2_w4Integrated/outputs/v2/predictions.csv >> repord.md 
           cml comment create --publish report.md
