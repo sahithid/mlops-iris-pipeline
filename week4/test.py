@@ -11,15 +11,15 @@ class TestModel(unittest.TestCase):
     def setUp(self):
         self.version= "v2"
         print("Pulling input data from DVC")
-        subprocess.run(['dvc', 'pull', 'data.dvc', '-v'], check=True)
+        subprocess.run(['dvc', 'pull', 'week4/data.dvc', '-v'], check=True)
 
-        data_path = f'data/{self.version}_data.csv'
+        data_path = f'week4/data/{self.version}_data.csv'
         self.test_data = pd.read_csv(data_path)
         self.X_test = self.test_data[['sepal_length','sepal_width','petal_length','petal_width']]
         self.y_test = self.test_data['species']
         
         print("Pulling model from DVC")
-        model_path = f'artifacts/model_v1/model_20251019_070025.joblib'
+        model_path = f'week4/artifacts/model_v1/w4_model.joblib'
         subprocess.run(['dvc', 'pull', model_path, '-v'], check=True)
         
         print("Loading model from DVC")

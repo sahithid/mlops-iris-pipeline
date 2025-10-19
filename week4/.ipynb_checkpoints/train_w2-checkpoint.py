@@ -14,7 +14,7 @@ data_version = "v1"
 if len(sys.argv) > 1:
     data_version = sys.argv[1]
 
-data = pd.read_csv(f"data/{data_version}_data.csv")
+data = pd.read_csv(f"week4/data/{data_version}_data.csv")
 #data_v2 = pd.read_csv("data/v2_data.csv")
 print(f"Running on data {data_version}")
 
@@ -32,15 +32,15 @@ def train(version, data):
     print('The accuracy of the Decision Tree is',"{:.3f}".format(metrics.accuracy_score(prediction,y_test)))
     
     timestamp = time.strftime("%Y%m%d_%H%M%S")
-    OUTPUT_FOLDER = f"artifacts/model_{version}"
+    OUTPUT_FOLDER = f"week4/artifacts/model_{version}"
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
     joblib.dump(mod_dt, f"{OUTPUT_FOLDER}/w4_model.joblib")
     print("Model saved to artifacts")
     
-    out_path = f"outputs/{version}/predictions.csv"
-    pd.DataFrame({f"predicted_{version}": prediction}).to_csv(out_path, index=False)
-    print("Predictions saved to outputs")
+    # out_path = f"week4/outputs/{version}/predictions.csv"
+    # pd.DataFrame({f"predicted_{version}": prediction}).to_csv(out_path, index=False)
+    # print("Predictions saved to outputs")
     
 
 train(data_version,data)
