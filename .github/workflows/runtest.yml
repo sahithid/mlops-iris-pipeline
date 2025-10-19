@@ -15,8 +15,8 @@ jobs:
       - name: GCP Auth
         uses: 'google-github-actions/auth@v3'
         with:
-            workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
-            service-account: ${{ secrets.SA_EMAIL }}
+            workload_identity_provider: 'projects/gentle-presence-472611-u8/locations/global/workloadIdentityPools/github-actions-cloud-auth/providers/github'
+            service-account: '66118017706-compute@developer.gserviceaccount.com'
       - name: Set up Python 
         uses: actions/setup-python@v4
         with: 
