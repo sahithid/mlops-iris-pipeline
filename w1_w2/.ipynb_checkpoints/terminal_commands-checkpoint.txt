@@ -1,0 +1,57 @@
+
+Creating Virtual Environment and Installing Necessary Packages
+
+git init
+python3 -m venv .env
+source .env/bin/activate
+python3 install -r requirements.txt
+pip install -r requirements.txt 
+
+Adding SSH Key for GitHub and setting the remote repository
+
+eval "$(ssh-agent -s)"
+ssh-add key
+git remote set-url origin git@github.com:sahithid/iris-dvc-pipeline.git
+  
+Install DVC and add remote GCS Bucket 
+
+pip install dvc
+dvc
+git add .dvc .gitignore
+dvc remote add -d gcsremote gs://week-2-dvc-iris-pipeline
+dvc remote add -d -f gcsremote gs://week-2-dvc-iris-pipeline
+git commit -m "remote gcs created"
+dvc add data
+git add data.dvc .gitignore
+git commit -m "Input data added"
+dvc push
+  
+Run Model and Track the outputs 
+
+python train.py v1
+python train_w2.py v1
+dvc add artifacts/model_v1/model_20251004_190049.joblib
+git add artifacts/model_v1/.gitignore artifacts/model_v1/model_20251004_190049.joblib.dvc
+dvc add outputs/v1/predictions_20251004_190049.csv
+git add outputs/v1/predictions_20251004_190049.csv.dvc outputs/v1/.gitignore
+git commit -m "Version 1 Classifying"
+git tag -a "v1" -m "version1"
+dvc push
+git push
+python train_w2.py v2
+dvc add artifacts/model_v2/model_20251004_190629.joblib
+git add artifacts/model_v2/model_20251004_190629.joblib.dvc artifacts/model_v2/.gitignore
+dvc add outputs/v2/predictions_20251004_190629.csv
+git add outputs/v2/predictions_20251004_190629.csv.dvc outputs/v2/.gitignore
+git commit -m "Version 2 of Iris Classifying"
+git tag -a "v2" -m "version 2"
+dvc push
+git push
+
+Demo of traversing through versions 
+
+git checkout v1
+dvc checkout
+git checkout v2
+dvc checkout
+history > terminal_commands.txt

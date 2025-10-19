@@ -1,0 +1,8 @@
+project: iris_classification
+registry: data/registry.db
+provider: gcp
+offline_store:
+  type: bigquery
+online_store:
+    type: sqlite
+    path: data/online_store.db
