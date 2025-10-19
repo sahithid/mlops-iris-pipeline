@@ -18,7 +18,7 @@ jobs:
         uses: iterative/setup-cml@v2
       - name: Run Unit Tests 
         run: |
-          pip install -r reqirements.txt
+          pip install -r requirements.txt
           chmod +x test.py
           python3 test.py > test_output.txt 
       - name: CML Report 
