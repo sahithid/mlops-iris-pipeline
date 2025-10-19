@@ -20,6 +20,7 @@ jobs:
         run: |
           pip install -r week4/requirements.txt
           pip install dvc
+          pip install dvc-gs
           python3 week4/test.py > test_output.txt 
       - name: CML Report 
         env: 
