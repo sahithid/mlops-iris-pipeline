@@ -174,3 +174,20 @@ git push origin dev
 git status
 git add .
 git log
+.env/bin/activate
+source .env/bin/activate
+git checkout dev
+dev add .
+git add .
+git commit
+git commit -m  "changes"
+git push origin dev
+git git config --global user.name "sahithid"
+git config --global user.name "sahithid"
+git config --global user.email "dmsahithi@gmail.com"
+git push origin dev
+ssh -T git@github.com
+git remote -v
+git remote set-url origin https://github.com/sahithid/mlops-iris-pipeline.git
+git push origin dev
+python week4/test.py

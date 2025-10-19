@@ -1,0 +1,10 @@
+2025-10-19 14:48:25,665 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2025-10-19 14:48:25,685 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
+2025-10-19 14:48:25,698 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--format: "value(projectNumber)", PROJECT_ID_OR_NUMBER: "gentle-presence-472611-u8"]
+2025-10-19 14:48:25,805 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-10-19 14:48:25,850 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/gentle-presence-472611-u8?alt=json HTTP/11" 200 None
+2025-10-19 14:48:25,852 DEBUG    root            Chosen display Format:default value(projectNumber)
+2025-10-19 14:48:25,854 INFO     root            Display format: "default value(projectNumber)"
+2025-10-19 14:48:25,934 INFO     ___FILE_ONLY___ 66118017706
+
+2025-10-19 14:48:25,949 DEBUG    root            SDK update checks are disabled.

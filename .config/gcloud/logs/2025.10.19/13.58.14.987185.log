@@ -1,0 +1,11 @@
+2025-10-19 13:58:14,988 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2025-10-19 13:58:15,183 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2025-10-19 13:58:15,185 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "compute/region", VALUE: "us-central1"]
+2025-10-19 13:58:15,407 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-10-19 13:58:15,523 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/gentle-presence-472611-u8/regions/us-central1?alt=json HTTP/11" 403 None
+2025-10-19 13:58:15,528 WARNING  root            Property validation for compute/region was skipped.
+2025-10-19 13:58:15,530 INFO     ___FILE_ONLY___ Updated property [compute/region].
+
+2025-10-19 13:58:15,531 DEBUG    root            Chosen display Format:default
+2025-10-19 13:58:15,532 INFO     root            Display format: "default"
+2025-10-19 13:58:15,538 DEBUG    root            SDK update checks are disabled.
