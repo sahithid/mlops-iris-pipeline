@@ -19,7 +19,7 @@ jobs:
       - name: Run Unit Tests 
         run: |
           pip install -r requirements.txt
-          python w2_w4Integrated/test.py > test_output.txt 2>&1
+          python test.py > test_output.txt 2>&1
       - name: CML Report 
         env: 
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
