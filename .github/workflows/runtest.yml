@@ -17,8 +17,8 @@ jobs:
         with:
             project_id: 'gentle-presence-472611-u8'
             token_format: 'access_token'
-            workload_identity_provider: 'projects/66118017706/locations/global/workloadIdentityPools/github-actions-cloud-auth/providers/github'
-            service_account: '66118017706-compute@developer.gserviceaccount.com'
+            workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+            service_account: ${{ secrets.SA_EMAIL }}
       - name: Set up Python 
         uses: actions/setup-python@v4
         with: 
