@@ -18,7 +18,9 @@ jobs:
         uses: iterative/setup-cml@v2
       - name: Run Unit Tests 
         run: |
-          python test.py > test_output.txt 2>&1
+          pip install -r reqirements.txt
+          chmod +x test.py
+          python3 test.py > test_output.txt 
       - name: CML Report 
         env: 
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
