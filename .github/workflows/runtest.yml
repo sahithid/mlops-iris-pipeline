@@ -1,0 +1,17 @@
+name: Sanity Test 
+on: 
+  workflow_dispatch: 
+permissions: 
+  contents: write 
+  permissions: write 
+jobs: 
+  test_model:
+    runs_on: ubuntu-latest 
+    steps: 
+      - name: Checkout 
+        uses: actions/checkout@v3
+      - name: Set up Python 
+        uses: actions/setup-python@v4
+          with: 
+            python-version: "3.9"
+      - name: 
