@@ -1,4 +1,38 @@
-/data
-.env
-.gitconfig
-.config
+# Jupyter / IPython
+.ipynb_checkpoints/
+.jupyter/
+.local/
+.ipython/
+__pycache__/
+*.pyc
+
+# VSCode / Editor files
+.vscode/
+.idea/
+
+# Python environment
+venv/
+.env/
+*.egg-info/
+
+# DVC cache and temp files
+.dvc/tmp/
+.dvc/cache/
+*.lock
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Logs
+logs/
+*.log
+
+# Mac/Linux hidden files
+.DS_Store
+
+# GCP Workbench and runtime
+.config/
+.gcloud/
+.gcsfuse/
+

@@ -191,3 +191,156 @@ git remote -v
 git remote set-url origin https://github.com/sahithid/mlops-iris-pipeline.git
 git push origin dev
 python week4/test.py
+git init
+source .env/bin/activate
+git pull dev
+git init
+git checkout dev
+dev checkout main
+git checkout main
+git rm --cached $(find . -name "*.env")
+git rm -r --cached $(find . -name "*.env")
+nano .gitignore
+git add .
+git commit -m "remove .env files and add gitignore"
+git push origin main
+git pull origin main
+git -rm .gitconfig
+git -r .gitconfig
+git rm .gitcongif
+git rm .gitconfig
+git stash
+    rm .gitconfig
+git pull origin main
+git config --global user.email “dmsahithi@gmail.com”
+ git config --global user.name “sahithid”
+git pull origin main
+git add *
+git stash
+git pull
+git add -A
+git stash
+git pull
+git add
+git add .
+git commit -m 'changes'
+git push origin  main
+    git push --force-with-lease origin main
+git checkout dev
+git pull dev
+clear
+git checkout  main
+git commit  -m "changes"
+git commit -a
+git add .
+git commit -m "changes"
+git psh origin dev
+git push origin dev
+git checkout main
+git merge dev
+git config --global user.email “dmsahithi@gmail.com”
+git config --global user.name “sahithid”
+git merge dev
+git rm .gitconfig
+git rm gitconfig
+nano .gitignore
+git rm gitconfig
+mv .gitconfig /
+nano .gitconfig
+nano .gitignore
+git add .gitignore
+    git commit -m "Stop tracking .gitconfig and add it to .gitignore"
+git push origin main
+git merge dev
+clear
+git checkout dev
+git add .
+git commit -m "cloud file"
+git  push origin main
+git checkout dev
+python train_w2.py
+python week4/train_w2.py
+dvc add week4/artifacts/model_v1/w4_model.joblib
+git add week4/artifacts/model_v1/w4_model.joblib.dvc
+git commit -m "trained model added"
+git push origin dev
+dvc push
+python test.py
+python week4/test.py
+git add .
+git commit -m "after test"
+git push origin dev
+nano .gitignore
+git add .
+git commit -m  "add gitignore"
+git prune
+git commit -m  "add gitignore and prune"
+git push origin dev
+git pull origin dev
+git merge dev
+git push origin dev
+git checkout main
+nano .gitignore
+git pull main
+git pull origin  main
+git merge  main
+git merge dev
+eval $(ssh-agent -s)
+ls -al ~/.sshls -al ~/.ssh
+ls -al ~/.ssh
+ssh-keygen -t ed25519 -C "dmsahithi@gmail.com"
+ssh-add key
+git branch
+git merge dev
+git config --global user.email "dmsahithi@gmail.com"
+git config --global user.name "sahithid"
+git merge dev
+git add .
+git commit -m "update gitignore"
+nano .gitignore
+git add .
+git commit -m "update gitignore"
+git push origin main
+git add .
+git commit -m "update gitignore"
+git push origin main
+git rm key
+git commit --amend
+git push
+git commit --amend --all
+git push
+git push
+git push
+git merge dev
+git checkout dev
+git checkout -b main
+git checkout -b main2
+git add .
+git commit -m "Creating Main"
+git push origin main2
+source .env/bin/activate
+git init
+gi branch
+git branch
+git checkout dev
+git checkout -b week5
+git branch
+git push -u origin week5
+git log
+git push -u origin week5
+git add .
+git commit -m "clean up"
+touch .gitignore
+nano .gitignore
+ls
+touch .dvcignore
+nano .dvcignore
+git add .
+git commit -m "Update gitignore, add dvcignore"
+git rm -r --cached .
+git add .
+git commit -m "clean  up"
+git push -u origin week5
+git stats
+git status
+exit
