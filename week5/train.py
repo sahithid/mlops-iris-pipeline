@@ -15,9 +15,10 @@ data_version = "v1"
 if len(sys.argv) > 1:
     data_version = sys.argv[1]
 
-data = pd.read_csv(f"week4/data/{data_version}_data.csv")
+#data = pd.read_csv(f"week4/data/{data_version}_data.csv")
+data = pd.read_csv("week5/data/iris.csv")
 
-print(f"Running on data {data_version}")
+#print(f"Running on data {data_version}")
 
 def train(version, data):
     train, test = train_test_split(data, test_size = 0.4, stratify = data['species'], random_state = 42)
@@ -25,6 +26,9 @@ def train(version, data):
     y_train = train.species
     X_test = test[['sepal_length','sepal_width','petal_length','petal_width']]
     y_test = test.species
+    
+    params = {}
+    
     mod_dt = DecisionTreeClassifier(max_depth = 3, random_state = 1)
     mod_dt.fit(X_train,y_train)
     
