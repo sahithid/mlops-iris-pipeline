@@ -1,38 +1,72 @@
-# Jupyter / IPython
+# Jupyter & GCP Workbench
 .ipynb_checkpoints/
 .jupyter/
+.cloud/
 .local/
-.ipython/
+.config/
+.history/
+*.nbconvert.ipynb
+
+# Python cache / compiled files
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
 
-# VSCode / Editor files
-.vscode/
-.idea/
-
-# Python environment
+# Virtual environments
 venv/
 .env/
-*.egg-info/
+.env*/
+.venv/
+ENV/
+env.bak/
+pip-wheel-metadata/
 
-# DVC cache and temp files
-.dvc/tmp/
+# Logs & temp data
+*.log
+*.tmp
+*.swp
+*.bak
+.bash_history 
+.bashrc
+.gitconfig
+
+
+# DVC cache and metadata
 .dvc/cache/
-*.lock
+.dvc/tmp/
+*.dvc.lock
 
-# MLflow
+# MLFlow local runs
 mlruns/
 mlartifacts/
 
-# Logs
-logs/
-*.log
+# Google Cloud / Vertex AI / credentials
+*.json
+*.yaml
+*.yml
+gcloud-key.json
+credentials/
+secrets/
 
-# Mac/Linux hidden files
+# VSCode / IDE configs
+.vscode/
+.idea/
+*.code-workspace
+
+# OS-specific
 .DS_Store
+Thumbs.db
 
-# GCP Workbench and runtime
-.config/
-.gcloud/
-.gcsfuse/
+# Output & artifacts
+artifacts/
+outputs/
+runs/
+models/
+checkpoints/
 
