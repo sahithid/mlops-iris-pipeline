@@ -45,7 +45,7 @@ def train(version, data):
     y_test = test.species
     
     params = { 
-        "max_depth": 3, 
+        "max_depth": 4, 
         "random_state":1
     }
     
