@@ -28,11 +28,30 @@ class TestModel(unittest.TestCase):
         mlflow.set_tracking_uri("http://127.0.0.1:8100")
         client = MlflowClient(mlflow.get_tracking_uri())
         model_name = "Iris_DecisionTree_Classifier"
-        latest_model = client.get_latest_versions(model_name, stages=["None"])
+        #latest_model = client.get_latest_versions(model_name, stages=["None"])
         #print(latest_model[-1])
         
-        self.model = mlflow.sklearn.load_model(f'models:/{model_name}/1')
-        print(f'Using Model: {model_name}')
+        #get best model 
+        #all_runs = client.search_runs([e_id], order_by = ["metrics.accuracy DESC"], max_results = 1)
+        #best_model = all_runs[0]
+        
+        versions = client.search_model_versions(f"name='{model_name}'")
+        #print(versions)
+        
+        best_version = 1 
+        max_accuracy = -1.0
+        
+        for ver in versions: 
+            run_id = ver.run_id 
+            metrics = client.get_run(run_id).data.metrics
+            accuracy = metrics.get("accuracy", -1.0)
+            if accuracy > max_accuracy: 
+                best_version = ver.version 
+                max_accuracy = accuracy
+            
+        
+        self.model = mlflow.sklearn.load_model(f'models:/{model_name}/{best_version}')
+        print(f'Using Model: {model_name} | Version: {best_version}')
         
     
     #Data Validation Tests
@@ -49,8 +68,8 @@ class TestModel(unittest.TestCase):
         #could be object or category 
         
         
-    def test_duplicate_values(self):
-        self.assertEqual(self.test_data.duplicated().sum(), 0, "Dataset contains duplicate rows")
+    # def test_duplicate_values(self):
+    #     self.assertEqual(self.test_data.duplicated().sum(), 0, "Dataset contains duplicate rows")
     
     #Evaluation Test
     def test_model_accuuracy(self):

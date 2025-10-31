@@ -63,8 +63,8 @@ def train(version, data):
     
     # out_path = f"week4/outputs/{version}/predictions.csv"
     # pd.DataFrame({f"predicted_{version}": prediction}).to_csv(out_path, index=False)
-    # print("Predictions saved to outputs")
-    with mlflow.start_run():
+    # print("Predictions saved to outputs") 
+    with mlflow.start_run():  
         print("Artifact URI:", mlflow.get_artifact_uri())
         mlflow.log_params(params)
         mlflow.log_metric("accuracy", accuracy_score) 
