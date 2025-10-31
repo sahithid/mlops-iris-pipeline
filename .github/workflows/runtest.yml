@@ -27,10 +27,8 @@ jobs:
         uses: iterative/setup-cml@v2
       - name: Run Unit Tests 
         run: |
-          pip install -r week4/requirements.txt
-          pip install dvc
-          pip install dvc-gs
-          python3 week4/test.py > test_output.txt 
+          pip install -r week5/requirements.txt
+          python3 week5/test.py > test_output.txt 
       - name: CML Report 
         env: 
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
