@@ -28,6 +28,7 @@ jobs:
       - name: Run Unit Tests 
         run: |
           pip install -r week5/requirements.txt
+          pip install dvc-gs
           python3 week5/test.py > test_output.txt 
       - name: CML Report 
         env: 
