@@ -1,4 +1,4 @@
-name: Sanity Test 
+name: Sanity Test with Mlflow Integration
 on: 
   workflow_dispatch: 
 permissions: 
