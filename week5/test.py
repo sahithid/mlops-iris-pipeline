@@ -4,6 +4,8 @@ import os
 import pandas as pd
 import subprocess
 from sklearn.metrics import accuracy_score
+import mlflow 
+from mlflow import MlflowClient
 
 
 class TestModel(unittest.TestCase):
@@ -11,19 +13,26 @@ class TestModel(unittest.TestCase):
     def setUp(self):
         self.version= "v2"
         print("Pulling input data from DVC")
-        subprocess.run(['dvc', 'pull', 'week4/data.dvc', '-v'], check=True)
+        subprocess.run(['dvc', 'pull', 'week5/data.dvc', '-v'], check=True)
 
-        data_path = f'week4/data/{self.version}_data.csv'
+        data_path = 'week5/data/iris.csv'
         self.test_data = pd.read_csv(data_path)
         self.X_test = self.test_data[['sepal_length','sepal_width','petal_length','petal_width']]
         self.y_test = self.test_data['species']
         
-        print("Pulling model from DVC")
-        model_path = f'week4/artifacts/model_v1/w4_model.joblib'
-        subprocess.run(['dvc', 'pull', model_path, '-v'], check=True)
+        print("Pulling model from mlflow")
+        #model_path = f'week4/artifacts/model_v1/w4_model.joblib'
+        #subprocess.run(['dvc', 'pull', model_path, '-v'], check=True)
         
-        print("Loading model from DVC")
-        self.model = joblib.load(model_path)
+        print("Loading model from mlflow")
+        mlflow.set_tracking_uri("http://127.0.0.1:8100")
+        client = MlflowClient(mlflow.get_tracking_uri())
+        model_name = "Iris_DecisionTree_Classifier"
+        latest_model = client.get_latest_versions(model_name, stages=["None"])
+        #print(latest_model[-1])
+        
+        self.model = mlflow.sklearn.load_model(f'models:/{model_name}/1')
+        print(f'Using Model: {model_name}')
         
     
     #Data Validation Tests
@@ -46,6 +55,7 @@ class TestModel(unittest.TestCase):
     #Evaluation Test
     def test_model_accuuracy(self):
         print("Running Prediction") 
+        print(self.model)
         prediction=self.model.predict(self.X_test)
         accuracy = accuracy_score(self.y_test, prediction)
         self.assertGreaterEqual(accuracy, 0.5, "Model Accuracy must be >= 0.5")
